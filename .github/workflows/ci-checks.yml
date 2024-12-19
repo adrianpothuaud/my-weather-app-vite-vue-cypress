@@ -26,10 +26,10 @@ jobs:
     # Runs tests in parallel with matrix strategy https://docs.cypress.io/guides/guides/parallelization
     # https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
     # Also see warning here https://github.com/cypress-io/github-action#parallel
-    strategy:
-      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
-      matrix:
-        containers: [ 1, 2, 3, 4, 5 ] # Uses 5 parallel instances
+    #    strategy:
+    #      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
+    #      matrix:
+    #        containers: [ 1, 2, 3, 4, 5 ] # Uses 5 parallel instances
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,11 +44,11 @@ jobs:
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
           start: npm run preview
-          wait-on: 'http://localhost:4173' # Waits for above
+          wait-on: 'http://localhost:4173/' # Waits for above
           # Records to Cypress Cloud
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
           record: true
-          parallel: true # Runs test in parallel using settings above
+          #          parallel: true # Runs test in parallel using settings above
           browser: chrome
           group: 'UI-Chrome' # Group tests together in the Cypress Dashboard
         env:
