@@ -9,7 +9,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          start: npm run run build && npm run preview &
+          start: npm run build && npm run preview &
           wait-on: 'http://localhost:4173/'
           record: true
           browser: chrome
