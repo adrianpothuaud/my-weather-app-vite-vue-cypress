@@ -28,4 +28,12 @@ describe('Places Search Feature', () => {
     cy.get('[data-cy=search-results]').should('not.exist');
     cy.get('[data-cy=error-message]').should('be.visible');
   });
+
+  it('should add a place to favorites after displaying weather information', () => {
+    cy.get('[data-cy=search-input]').type('New York');
+    cy.get('[data-cy=search-result-item]').first().click();
+    cy.get('[data-cy=weather-info]').should('be.visible');
+    cy.get('[data-cy=add-favorite-button]').click();
+    cy.get('[data-cy=favorite-list]').should('contain', 'New York');
+  });
 });
