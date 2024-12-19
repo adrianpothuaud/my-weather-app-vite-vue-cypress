@@ -1,7 +1,7 @@
 name: Continuous Integration Checks
 on: [ push ]
 jobs:
-  cypress-run:
+  all-checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
