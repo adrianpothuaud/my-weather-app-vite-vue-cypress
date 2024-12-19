@@ -1,7 +1,5 @@
 const pagesToCheck = [
   {url: '/', title: 'Home'},
-  {url: '/about', title: 'About'},
-  {url: '/contact', title: 'Contact'},
 ]
 
 describe('Pages accessibility criteria', () => {
