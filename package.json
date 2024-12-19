@@ -7,6 +7,7 @@
     "build": "vite build",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
+    "cy:run:ci": "cypress run --record --group 'UI - Chrome'",
     "dev": "vite",
     "preview": "vite preview"
   },

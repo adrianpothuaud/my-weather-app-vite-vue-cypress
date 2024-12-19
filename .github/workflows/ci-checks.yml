@@ -10,14 +10,10 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm run preview &
-          wait-on: 'http://localhost:4173/'
-          record: true
-          browser: chrome
-          group: 'UI-Chrome'
+      - name: Install start-server-and-test
+        run: npm install -g start-server-and-test
+      - name: Start server and run tests
+        run: npx start-server-and-test preview http://localhost:4173/ cy:run:ci
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
